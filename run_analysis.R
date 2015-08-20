@@ -49,18 +49,18 @@ project<-function(){
     names(EXTRACTED_DATA)<-EXTRACTED_NAMES
     
     ### Finding the mean of each observation, grouped by "activity" and "subject"
-    NEW_DATA<-aggregate(EXTRACTED_DATA[,1:(NUM_COL-2)],
+    FINAL_DATA<-aggregate(EXTRACTED_DATA[,1:(NUM_COL-2)],
                         by=list(EXTRACTED_DATA$activity,
                                 EXTRACTED_DATA$subject),mean)
     
     ### Reassigning the column name, because we are finding the mean of the mean, 
     ### and mean of the deviation.
-    names(NEW_DATA)<-paste("MEAN[",names(NEW_DATA),"]",sep="")
+    names(FINAL_DATA)<-paste("MEAN[",names(FINAL_DATA),"]",sep="")
     
     ### Manually reassign the "activity" and "subject" column name.
-    names(NEW_DATA)[1]<-"activity"
-    names(NEW_DATA)[2]<-"subject"
+    names(FINAL_DATA)[1]<-"activity"
+    names(FINAL_DATA)[2]<-"subject"
     
     ### Write final data into a txt file.
-    write.table(NEW_DATA,row.name=FALSE,file="./projectsubmit.txt")
+    write.table(FINAL_DATA,row.name=FALSE,file="./projectsubmit.txt")
 }

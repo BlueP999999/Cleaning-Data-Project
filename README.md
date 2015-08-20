@@ -18,28 +18,48 @@ The "cbind" command will merge these data together.
 
 This is done by "rbind" command.
 
+The combined data is stored in "NEWSET".
+
 ## Read all the column names
 
 The column names file should be located at "./UCI HAR Dataset/features.txt". 
 
-### Manually input the names for the "activity" and "subject" column
+The code also manually input the names for the "activity" and "subject" column
+
+The column names is stored in "NAMES".
 
 ## Locate all columns with names including the phrase "mean" or "std", but exclude the phrease "meanFreq"
 
-### Manually include the "activity" and "subject" column
+The code also manually include the "activity" and "subject" column.
+
+This result is stored in "MEAN_OR_STD".
 
 ## Extract our required data
 
-## Converting a numeric vector to a factor vector
+This result is stored in "EXTRACTED_DATA".
 
-### Manually assigning the levels for this factor vector
+## Changing the contents of "activity" column.
+
+This is done by converting a numeric factor into a factor vector using the "factor" command, and manually assigning the levels for this factor vector using the "levels" command.
 
 ## Assigning the column names
 
+This step assigns the column names of the extracted columns. 
+
+Changing the column names of "EXTRACTED_DATA" using "NAMES" and "MEAN_OR_STD".
+
 ## Finding the mean of each observation, grouped by "activity" and "subject"
+
+This step uses the "aggregate" function.
+
+The final result is stored in "FINAL_DATA"
 
 ## Reassigning the column name, because we are finding the mean of the mean, and mean of the deviation.
 
-### Manually reassign the "activity" and "subject" column name.
+e.g. instead of displaying "tBodyAcc-mean()-X", we display "MEAN[tBodyAcc-mean()-X]".
+
+Also, we manually reassign the "activity" and "subject" column name.
 
 ## Write final data into a txt file.
+
+Using "write.table"
