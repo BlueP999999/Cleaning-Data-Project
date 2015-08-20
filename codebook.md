@@ -13,6 +13,10 @@ The remaining columns are those columns whose column name includes the phrase "m
 
 The numeric data (excluding the "activity" and "subject" column) represents the mean of many measurements of those variables. e.g. The "MEAN[tBodyAcc-mean()-X]" variable represents the mean of (tBodyAcc-mean()-X) over many measurements in our original data (i.e. mean of the means). Similarly, the "MEAN[tBodyAcc-std()-X]" variable represents the mean of (tBodyAcc-std()-X) over many measurements in our original data (i.e. mean of the standard deviations)
 
+The unit for any variable with the word "acc" for acceleration is standard gravity unit 'g'.
+
+The unit for any variable with the word "gyro" for angular velocity vector is in radians/second.
+
 ## Work done
 
 First I combined measurements, activity type, and subject number file into one data frame (i.e. the "X-test.txt", "y_test.txt","subject_test.txt" file respectively, for both the "test" pool and "train" pool).
